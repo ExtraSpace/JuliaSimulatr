@@ -1,4 +1,5 @@
 # Simulation of Linear Model Data
+export simrel
 
 type simrel <: AbstractFloat
     beta0    ::Vector{Float64}
