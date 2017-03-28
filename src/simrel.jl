@@ -2,17 +2,17 @@
 
 # Starting Simrel Code
 function simrel{T}(
-    n         ::T = 100,
-    p         ::T = 10,
-    q         ::T = 5,
-    relpos    ::T = [1, 2, 3],
-    gamma     ::T = 0.2,
-    R2        ::T = 0.9;
-    ntest     ::T = nothing,
-    muY       ::T = nothing,
-    muX       ::T = nothing,
-    lambdaMin ::T = 10e-4,
-    sim       ::T = nothing
+    n::T         = 100,
+    p::T         = 10,
+    q::T         = 5,
+    relpos::T    = [1, 2, 3],
+    gamma::T     = 0.2,
+    R2::T        = 0.9;
+    ntest::T     = nothing,
+    muY::T       = nothing,
+    muX::T       = nothing,
+    lambdaMin::T = 10e-4,
+    sim::T       = nothing
 )
     m = length(relpos) ## Number of relevant components
     if (q < m)
