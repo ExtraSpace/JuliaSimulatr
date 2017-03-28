@@ -1,31 +1,17 @@
 # Simulation of Linear Model Data
-export simrel
-
-type simrel <: AbstractFloat
-    beta0    ::Vector{Float64}
-    beta     ::Vector{Float64}
-    sigma    ::Matrix{Float64}
-    R2       ::Vector{Float64},
-    minerror ::Vector{Float64},
-    X        ::Matrix{Float64},
-    Y        ::Matrix{Float64},
-    testX    ::Matrix{Float64},
-    testY    ::Matrix{Float64}
-end
-
 # Starting Simrel Code
 function simrel(
-    n::Int64 = 100,
-    p::Int64 = 10,
-    q::Int64 = 5,
-    relpos::Vector{Int64} = [1, 2, 3],
-    gamma::Float64 = 0.2,
-    R2::Float64 = 0.9;
-    ntest::Int64 = nothing,
-    muY::Vector{Float64} = nothing,
-    muX::Vector{Float64} = nothing,
-    lambdaMin::Float64 = 10e-4,
-    sim::AbstractFloat = nothing
+    n         = 100,
+    p         = 10,
+    q         = 5,
+    relpos    = [1, 2, 3],
+    gamma     = 0.2,
+    R2        = 0.9;
+    ntest     = nothing,
+    muY       = nothing,
+    muX       = nothing,
+    lambdaMin = 10e-4,
+    sim       = nothing
 )
     m = length(relpos) ## Number of relevant components
     if (q < m)
@@ -114,14 +100,14 @@ function simrel(
     end
 
     return @NT(
-      beta0 = beta0,
-      beta = betaX,
-      sigma = sigma,
-      R2 = R2,
+      beta0    = beta0,
+      beta     = betaX,
+      sigma    = sigma,
+      R2       = R2,
       minerror = minerror,
-      X = X,
-      Y = Y,
-      testX = testX,
-      testY = testY
+      X        = X,
+      Y        = Y,
+      testX    = testX,
+      testY    = testY
     )
 end
