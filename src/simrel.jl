@@ -1,17 +1,16 @@
 # Simulation of Linear Model Data
 
-# type simrel
-# type simrel{T<: AbstractFloat}
-#     beta0::Vector{Float64}
-#     beta::Vector{Float64}
-#     sigma::Matrix{Float64}
-#     R2::Vector{Float64},
-#     minerror::Vector{Float64},
-#     X::Matrix{Float64},
-#     Y::Matrix{Float64},
-#     testX::Matrix{Float64},
-#     testY::Matrix{Float64}
-# end
+type simrel <: AbstractFloat
+    beta0    ::Vector{Float64}
+    beta     ::Vector{Float64}
+    sigma    ::Matrix{Float64}
+    R2       ::Vector{Float64},
+    minerror ::Vector{Float64},
+    X        ::Matrix{Float64},
+    Y        ::Matrix{Float64},
+    testX    ::Matrix{Float64},
+    testY    ::Matrix{Float64}
+end
 
 # Starting Simrel Code
 function simrel(
